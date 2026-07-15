@@ -23,7 +23,7 @@ os:ServiceExecutionStage cmns-dt:succeeds os:CreationStage ;
   cmns-col:comprises os:ServiceDeliveryEvent ;
   cmns-col:comprises os:ServiceAccrualEvent ;
   cmns-col:comprises os:ServiceAccrualExemptionEvent ;
-  cmns-col:comprises os:IncidentReport ;
+  cmns-col:comprises os:IncidentReportEvent ;
   cmns-col:comprises os:TerminatedServiceEvent .
 
 os:ExpirationStage cmns-dt:succeeds os:ServiceExecutionStage ;
