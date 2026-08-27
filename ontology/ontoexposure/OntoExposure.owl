@@ -11,7 +11,7 @@
     <owl:Ontology rdf:about="https://www.theworldavatar.com/kg/ontoexposure/">
         <dc:date>27 August 2026</dc:date>
         <rdfs:comment>Ontology used to calculate exposures to the environment</rdfs:comment>
-        <owl:versionInfo>1.2</owl:versionInfo>
+        <owl:versionInfo>1.3</owl:versionInfo>
         <gitCommitHash>c0599beca8df55873a1ab061dee64e52c510c6a0</gitCommitHash>
     </owl:Ontology>
     
