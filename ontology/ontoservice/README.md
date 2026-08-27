@@ -115,9 +115,12 @@ flowchart LR
 | cmns-pts          | `https://www.omg.org/spec/Commons/PartiesAndSituations/`                                         |
 | cmns-qtu          | `https://www.omg.org/spec/Commons/QuantitiesAndUnits/`                                           |
 | cmns-rlcmp        | `https://www.omg.org/spec/Commons/RolesAndCompositions/`                                         |
-| fibo-fbc-fi-ip    | `https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing`           |
-| fibo-fbc-pas-fpas | `https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices` |
+| fibo-fbc-fi-ip    | `https://spec.edmcouncil.org/fibo/ontology/FBC/FinancialInstruments/InstrumentPricing/`          |
+| fibo-fbc-pas-caa | `https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/ClientsAndAccounts/`           |
+| fibo-fbc-pas-fpas | `https://spec.edmcouncil.org/fibo/ontology/FBC/ProductsAndServices/FinancialProductsAndServices/`|
 | fibo-fnd-acc-cur  | `https://spec.edmcouncil.org/fibo/ontology/FND/Accounting/CurrencyAmount/`                       |
+| fibo-fnd-arr-doc  | `https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Documents/`                          |
+| fibo-fnd-agr-agr  | `https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Agreements/`                           |
 | fibo-fnd-agr-ctr  | `https://spec.edmcouncil.org/fibo/ontology/FND/Agreements/Contracts/`                            |
 | fibo-fnd-arr-lif  | `https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Lifecycles/`                         |
 | fibo-fnd-arr-rep  | `https://spec.edmcouncil.org/fibo/ontology/FND/Arrangements/Reporting/`                          |
@@ -129,10 +132,15 @@ flowchart LR
 | fibo-fnd-plc-adr  | `https://spec.edmcouncil.org/fibo/ontology/FND/Places/Addresses/`                                |
 | fibo-fnd-plc-fac  | `https://spec.edmcouncil.org/fibo/ontology/FND/Places/Facilities/`                               |
 | fibo-fnd-plc-loc  | `https://spec.edmcouncil.org/fibo/ontology/FND/Places/Locations/`                                |
-| fibo-fnd-rel-rel  | `https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations`                              |
+| fibo-fnd-rel-rel  | `https://spec.edmcouncil.org/fibo/ontology/FND/Relations/Relations/`                             |
 | fibo-fnd-org-fm   | `https://spec.edmcouncil.org/fibo/ontology/FND/Organizations/FormalOrganizations/`               |
+| fibo-fnd-txn-rea  | `https://spec.edmcouncil.org/fibo/ontology/FND/TransactionsExt/REATransactions/`                 |
 | lcc-cr            | `https://www.omg.org/spec/LCC/Countries/CountryRepresentation/`                                  |
 | om                | `http://www.ontology-of-units-of-measure.org/resource/om-2/`                                     |
+| p2p-o-doc         | `https://purl.org/p2p-o/document#`                                                               |
+| p2p-o-doc-line    | `https://purl.org/p2p-o/documentline#`                                                           |
+| p2p-o-inv         | `https://purl.org/p2p-o/invoice#`                                                                |
+| p2p-o-item        | `https://purl.org/p2p-o/item#`                                                                   |
 | sf                | `http://www.opengis.net/ont/sf#`                                                                 |
 | geo               | `http://opengis.net/ont/geosparql#`                                                              |
 | rdfs              | `http://www.w3.org/2000/01/rdf-schema#`                                                          |
@@ -265,16 +273,20 @@ flowchart LR
     ServiceExecutionStage -. cmns-col:comprises .-> OrderReceivedEvent[[ontoservice:OrderReceivedEvent]]
     ServiceExecutionStage -. cmns-col:comprises .-> ServiceDispatchEvent[[ontoservice:ServiceDispatchEvent]]
     ServiceExecutionStage -. cmns-col:comprises .-> ServiceDeliveryEvent[[ontoservice:ServiceDeliveryEvent]]
+    ServiceExecutionStage -. cmns-col:comprises .-> ServiceAccrualEvent[[ontoservice:ServiceAccrualEvent]]
     ServiceExecutionStage -. cmns-col:comprises .-> IncidentReportEvent[[ontoservice:IncidentReportEvent]]
     ServiceExecutionStage -. cmns-col:comprises .-> TerminatedServiceEvent[[ontoservice:TerminatedServiceEvent]]
-    ServiceExecutionStage -. cmns-col:comprises .-> CalculationEvent[[fibo-fnd-dt-oc:CalculationEvent]]
     ServiceDispatchEvent -. cmns-dt:succeeds .-> OrderReceivedEvent
     ServiceDeliveryEvent -. cmns-dt:succeeds .-> ServiceDispatchEvent
-    CalculationEvent -. cmns-dt:succeeds .-> ServiceDeliveryEvent
-    IncidentReportEvent -. cmns-dt:succeeds .-> ServiceDeliveryEvent
+    TerminatedServiceEvent -. cmns-dt:succeeds .-> OrderReceivedEvent
+    IncidentReportEvent -. cmns-dt:succeeds .-> ServiceDispatchEvent
+    ServiceAccrualEvent -. cmns-dt:succeeds .-> ServiceDeliveryEvent
+    ServiceAccrualEvent -. cmns-dt:succeeds .-> IncidentReportEvent
+    ServiceAccrualEvent -. cmns-dt:succeeds .-> TerminatedServiceEvent
     OrderReceivedEvent --> Event
     ServiceDispatchEvent --> Event
     ServiceDeliveryEvent --> Event
+    ServiceAccrualEvent --> Event
     IncidentReportEvent --> Event
     TerminatedServiceEvent --> Event
 
@@ -288,13 +300,15 @@ flowchart LR
 
 In the creation stage, the service agreement will need to be created before it is approved, as represented by the `ContractCreation` and `ContractApproval` events.
 
-During the service execution stage, the sequence of events should occur in the following manner during a successful delivery. It should be noted that the event may be completed with either a `CalculationEvent`, `IncidentReportEvent`, or `TerminatedServiceEvent`. The `Terminated Service Event` represents the termination of an upcoming service either by the service provider or the client, which may occur at any time after the first event.
+During the service execution stage, the sequence of events should occur in the following manner during a successful delivery. It should be noted that the event may be completed with either a `ServiceDeliveryEvent`, `IncidentReportEvent`, or `TerminatedServiceEvent`.
 
 1. `Order Received Event`: When a new service order is received and acknowledged by the system after the approval
 2. `Service Dispatch Event`: Assignment of service personnel, resources, and/or location(s) to perform the requested service
 3. `Service Delivery Event`: Delivery of the requested service
-4. `Calculation Event`: Records a summary of the service trip, tailored to the specific domain; multiple calculation events can be instantiated if multiple calculations/quantities are reported
+4. Events that may occur either after (1) or (2)
    - `Incident Report Event`: An alternate possible event in which an incident occurred during the service delivery, resulting in the failure to complete
+   - `Terminated Service Event`: An alternate possible event in which an upcoming service has been terminated either by the service provider or the client, which may occur at any time after the first event
+5. `Service Accrual Event`: A financial milestone that captures additional charges and purchase order details to calculate the final billable value of a service before it is aggregated for invoicing.
 
 During the expiration stage, the service agreement can end in four situations:
 
@@ -400,11 +414,53 @@ flowchart LR
     Sunday[[fibo-fnd-dt-fd:Sunday]] -.-> DayOfWeek
 ```
 
+Figure 5b: TBox representation of an ad-hoc schedule
+
+Alternatively, a collection of explicit dates may be specified in the schedule. The schedule will be of class `fibo-fnd-dt-fd:AdHocSchedule`, which is a collection of `fibo-fnd-dt-fd:AdHocScheduleEntry` where each of them contains an explicit date.
+
+```mermaid
+%%{init: {"flowchart": {"defaultRenderer": "elk"}} }%%
+flowchart LR
+    %% Styling
+    classDef literal fill:none
+    classDef node overflow-wrap:break-word,text-wrap:pretty
+    classDef new fill:#f00,overflow-wrap:break-word,text-wrap:pretty,stroke:#fff,stroke-width:2px;
+    linkStyle default overflow-wrap:break-word,text-wrap:pretty;
+
+    %% Contents
+    StageOccurrence[[fibo-fbc-pas-fpas:ContractLifecycleStageOccurrence]] -. cmns-col:comprises .-> EventOccurrence[[fibo-fbc-pas-fpas:ContractLifecycleEventOccurrence]]
+    StageOccurrence -. fibo-fnd-rel-rel:exemplifies .-> ServiceExecutionStage[[ontoservice:ServiceExecutionStage]]
+    EventOccurrence -. fibo-fnd-rel-rel:exemplifies .-> Event[[ontoservice:ServiceDeliveryEvent]]
+    ServiceExecutionStage -. cmns-col:comprises .-> Event
+    StageOccurrence -. cmns-pts:holdsDuring .-> DatePeriod[[cmns-dt:DatePeriod]]
+    DatePeriod -. cmns-dt:hasStartDate .-> StartDate[[Service Start Date]]
+    DatePeriod -. cmns-dt:hasEndDate .-> EndDate[[Service End Date]]
+    StartDate -.-> Date["<h4>cmns-dt:Date</h4><p style='font-size:0.75rem;'>cmns-dt:hasDateValue &quot;xsd:date&quot;</p>"]:::literal
+    EndDate -.-> Date
+
+    StageOccurrence -. fibo-fnd-dt-fd:hasSchedule .-> Schedule[["<h4>fibo-fnd-dt-fd:AdHocSchedule</h4><p style='font-size:0.75rem;'>fibo-fnd-dt-fd:hasCount &quot;xsd:integer&quot;</p>"]]:::new
+    Schedule -. fibo-fnd-dt-oc:hasOccurrence .-> EventOccurrence
+
+    Schedule -. cmns-dt:hasTimePeriod .-> TimePeriod[[cmns-dt:ExplicitTimePeriod]]
+    TimePeriod -. cmns-dt:hasStart .-> StartTime[[Start Time]]
+    TimePeriod -. cmns-dt:hasEndTime .-> EndTime[[End Time]]
+    StartTime -.-> Time["<h4>cmns-dt:TimeOfDay</h4><p style='font-size:0.75rem;'>cmns-dt:hasTimeValue &quot;xsd:time&quot;</p>"]:::literal
+    EndTime -.-> Time
+
+    Schedule -. cmns-dt:hasStartDate .-> StartDate
+    Schedule -. cmns-col:hasMember .-> Entry[[fibo-fnd-dt-fd:AdHocScheduleEntry]]:::new
+    Entry -.-> cmns-dt:hasDate -.-> AdHocDate[[Ad Hoc Date]]:::new
+    AdHocDate -.-> Date
+
+    
+
+```
+
 #### Successful Service Delivery
 
 The typical sequence of events for a successful service delivery is depicted in the figure below. Each event's occurrence can be instantiated with the `ContractLifecycleEventOccurrence` concept, which must be assigned a specific date, time, and location (if required). The process begins with the `OrderReceivedEvent`, which kickstarts the workflow. The next event is the `ServiceDispatchEvent`, where users can assign resources, personnel, and locations to specific orders. Personnel can be assigned using the `fibo-fnd-rel-rel:designates` relation and `fibo-fnd-org-fm:Employee` subclasses, while resources (such as equipment `saref:Device` or facility `ontobim:Facility`) can be assigned using the `fibo-fnd-rel-rel:involves` relation. For example, a driver can be designated for the delivery, and their assigned transport and other details can be tracked as described in [`OntoProfile`](https://www.theworldavatar.com/kg/ontoprofile/). Please do note that while the delivery typically occurs at the service site, some deliveries required an additional destination at a separate facility.
 
-Following this, the `ServiceDeliveryEvent` occurs when the services are executed. Users can supplement information on any exchange of assets or equipment using the `fibo-fnd-rel-rel:exchanges` relation. Once the service is delivered, users can log any relevant information with the subsequent `CalculationEvent`, such as price, weight, distance, etc. These occurrences will serve as a record to be analysed for quality, efficiency, and compliance with service agreements.
+Following this, the `ServiceDeliveryEvent` occurs when the services are executed. Users can supplement information on any exchange of assets or equipment using the `fibo-fnd-rel-rel:exchanges` relation. Once the service is delivered, users can log any relevant information with the subsequent `Record`, such as weight, distance, etc. These occurrences will serve as a record to be analysed for quality, efficiency, and compliance with service agreements.
 
 It is recommended that the `EventStatus` concept is only used to describe the status of each event occurrence for both a `ServiceDispatchEvent` and `ServiceDeliveryEvent`. A dispatch event may have either pending or completed statuses, whereas a delivery event may be in the pending, in progress, or completed states.
 
@@ -436,9 +492,7 @@ flowchart TD
     DeliveryOccurrence -. cmns-dt:succeeds .-> DispatchOccurrence
     DeliveryEventStatus[[ontoservice:EventStatus]] -. cmns-dsg:describes .-> DeliveryOccurrence
 
-    StageOccurrence -. cmns-col:comprises .-> Calculation[["<h4>fibo-fnd-dt-oc:Calculation</h4><p style='font-size:0.75rem;'>rdfs:comment &quot;string&quot;<br>fibo-fnd-dt-oc:hasEventDate &quot;xsd:dateTime&quot;</p>"]]:::literal
-    CalculationEvent[[fibo-fnd-dt-oc:CalculationEvent]] -. cmns-cls:classifies .-> Calculation
-    Calculation -. cmns-dt:succeeds .-> DeliveryOccurrence
+    Record[[cmns-doc:Record]] -. cmns-doc:refersTo .-> DeliveryOccurrence
 
     StageOccurrence -. fibo-fnd-dt-fd:hasSchedule .-> Schedule[[fibo-fnd-dt-fd:RegularSchedule]]
     Schedule -. fibo-fnd-dt-oc:hasOccurrence .-> DeliveryOccurrence
@@ -448,11 +502,84 @@ flowchart TD
     EventOccurrence -. fibo-fnd-plc-loc:isLocatedAt .-> Location[[fibo-fnd-plc-loc:PhysicalLocation]]
 ```
 
-#### Calculation
+## 2.3 Reporting
 
-Once the service is completed, it is expected that the user will log certain values, which serves as inputs for some form of calculation such as collection weight or distance travelled. The calculation have an associated expression, that may ingest any constant or variable values. Outputs are represented via the `cmns-qtu:hasQuantityValue`. Multiple calculations can be instantiated per delivery for different measures, and will typically be reported in at least one report. For more information on reporting representation, please read the [next section](#23-reporting).
+In reporting the services delivered as per the service agreement, the `Record` concept can be used to record on the individual service occurrence. These records record one or more values, that may be directly or indirectly computed from the measures logged upon the successful completion of the service. Each occurrence can also have one or more records that records different information about the same occurrence. For instance, there can be two records to record the weight of a delivered good and its travelled distance.
 
-Figure 7: TBox representation of a calculation during the service lifecycle
+Figure 7: TBox representation of a report for a service agreement
+
+```mermaid
+flowchart LR
+    %% Styling
+    classDef literal fill:none
+    classDef node overflow-wrap:break-word,text-wrap:pretty
+    linkStyle default overflow-wrap:break-word,text-wrap:pretty;
+
+    %% Contents
+    Agreement[[fibo-fnd-pas-pas:ServiceAgreement]] -. fibo-fnd-arr-rep:isRequestedBy .-> Client[[fibo-fnd-pas-pas:Client]]
+    Agreement -. fibo-fnd-agr-ctr:hasContractParty .-> ServiceProvider[[fibo-fnd-pas-pas:ServiceProvider]]
+    ServiceProvider -. cmns-rlcmp:isPlayedBy .-> Org[[fibo-fnd-org-fm:FormalOrganization]]
+
+    Agreement -. fibo-fnd-arr-lif:hasLifecycle .-> LifecycleOccurrence[[fibo-fbc-pas-fpas:ContractLifecycleOccurrence]]
+    LifecycleOccurrence -. fibo-fnd-arr-lif:hasStage .-> StageOccurrence[[fibo-fbc-pas-fpas:ContractLifecycleStageOccurrence]]
+    StageOccurrence -. cmns-col:comprises .-> DeliveryOccurrence[[fibo-fbc-pas-fpas:ContractLifecycleEventOccurrence]]
+    DeliveryOccurrence -. fibo-fnd-rel-rel:exemplifies .-> ServiceDeliveryEvent[[ontoservice:ServiceDeliveryEvent]]
+
+    Record[[cmns-doc:Record]] -. cmns-doc:refersTo .-> DeliveryOccurrence
+```
+
+### 2.3.1 Billing
+
+In supporting the billing process, a customer account must be first set up with a new `AccountHolder` concept. Each customer account defines an account-specific agreement that stipulates a catalog of approved pricing models. However, the binding payment terms are specified by the individual service-specific agreements. A balance can also be attached to the account.
+
+Each customer account holds a financial record that is associated with at least one account invoice. Customers receive an account invoice that consolidates all billed tasks for a specific invoicing period and payment due date. Each billed task has its own task invoice detailing specific costs. Multiple task invoices can be linked to an account invoice via `p2p-o-inv:hasInvoiceReference`. These costs are automatically calculated based on the service's pricing model, usage data, and any applicable discounts or fees.
+
+Figure 8: TBox representation of a customer account and their billable services
+
+```mermaid
+   flowchart TD
+   %% Styling
+   classDef literal fill:none
+   classDef node overflow-wrap:break-word,text-wrap:pretty
+   linkStyle default overflow-wrap:break-word,text-wrap:pretty;
+
+   %% Contents
+   CustomerAccount[[fibo-fbc-pas-caa:CustomerAccount]] -. cmns-dsg:isDefinedIn .-> Agreement[[fibo-fbc-pas-caa:AccountSpecificServiceAgreement]]
+   Agreement -. fibo-fnd-agr-ctr:hasContractParty .-> ServiceProvider[[fibo-fnd-pas-pas:ServiceProvider]] 
+   Agreement -. fibo-fnd-agr-agr:isObligationOf .-> AccountHolder[[fibo-fbc-pas-caa:AccountHolder]]
+
+   Agreement -. fibo-fnd-rel-rel:confers .-> EconomicCommitment[[fibo-fnd-txn-rea:EconomicCommitment]]
+   EconomicCommitment -. cmns-pts:holdsDuring .-> DatePeriod[[cmns-dt:DatePeriod]]
+   DatePeriod -. cmns-dt:hasStartDate .-> StartDate[[Start Date]]
+   DatePeriod -. cmns-dt:hasEndDate .-> EndDate[[End Date]]
+   StartDate -.-> Date["<h4>cmns-dt:Date</h4><p style='font-size:0.75rem;'>cmns-dt:hasDateValue &quot;xsd:date&quot;</p>"]:::literal
+   EndDate -.-> Date
+
+   EconomicCommitment -. fibo-fnd-rel-rel:mandates .-> PricingModel[[fibo-fbc-fi-ip:PricingModel]]
+   CalculatedPrice[[fibo-fnd-acc-cur:CalculatedPrice]] -. cmns-cxtdsg:uses .-> PricingModel
+
+   AccountHolder -. fibo-fnd-rel-rel:holds .-> CustomerAccount
+   ServiceProvider -. cmns-org:provides .-> CustomerAccount
+   CustomerAccount -. fibo-fbc-pas-caa:hasBalance .-> Balance[[fibo-fbc-pas-caa:Balance]]
+   
+   ServiceAgreement[[fibo-fnd-pas-pas:ServiceAgreement]] -. property paths .-> ClosedTask[[fibo-fbc-pas-fpas:ContractLifecycleEventOccurrence]]
+   ServiceAgreement -. fibo-fnd-rel-rel:confers .-> PaymentObligation[[fibo-fnd-pas-psch:PaymentObligation]]
+   PaymentObligation -. fibo-fnd-rel-rel:mandates .-> PricingModel
+
+   CustomerAccount -. fibo-fnd-arr-doc:hasRecord .-> FinancialRecord[[fibo-fnd-arr-doc:FinancialRecord]]
+   FinancialRecord -. cmns-col:comprises .-> Invoice["<h4>p2p-o-doc:E-Invoice</h4><p style='font-size:0.75rem;'>p2p-o-inv:invoicingPeriodStartDate &quot;xsd:date&quot;<br>p2p-o-inv:invoicingPeriodEndDate &quot;xsd:date&quot;<br>p2p-o-inv:paymentDueDate &quot;xsd:date&quot;</p>"]:::literal
+   
+   Invoice -. p2p-o-inv:hasInvoiceReference .-> TaskInvoice[[p2p-o-doc:E-Invoice]]
+   TaskInvoice -. cmns-doc:isAbout .-> ClosedTask
+   ClosedTask -. fibo-fnd-rel-rel:exemplifies .->  ServiceAccrualEvent[[ontoservice:ServiceAccrualEvent]]
+
+   TaskInvoice -. p2p-o-inv:hasInvoiceLine .-> InvoiceLine["<h4>p2p-o-doc-line:InvoiceLine</h4><p style='font-size:0.75rem;'>p2p-o-doc-line:lineNote &quot;xsd:string&quot;</p>"]:::literal
+   InvoiceLine -. p2p-o-doc-line:hasGrosspriceOfItem .-> CalculatedPrice
+```
+
+The billable amount for each service delivery is recorded as a `CalculatedPrice`, derived from a pricing model and specific inputs defined by the individual service (such as usage metrics), and any additional required discounts or charges. An `E-Invoice` is instantiated to reference the target `ServiceAccrualEvent`, which details the discounts and additional charges on top of service charges for each task. Descriptions for each invoice line can be added via the `lineNote` property. However, for additional charges, it is recommended to add them via the item description to separate them from the service charge. Note that the variable fee must use **price per quantity** as a measurement unit. In the example below, price per tonne is used, and these extensions can be made in the `abox.ttl`.
+
+Figure 9: TBox representation of an invoice for each task within a service agreement
 
 ```mermaid
 flowchart TD
@@ -462,74 +589,12 @@ flowchart TD
     linkStyle default overflow-wrap:break-word,text-wrap:pretty;
 
     %% Contents
-    CalculationEvent[[fibo-fnd-dt-oc:CalculationEvent]] -- cmns-cls:classifies --> Calculation[["<h4>fibo-fnd-dt-oc:Calculation</h4><p style='font-size:0.75rem;'>rdfs:comment &quot;string&quot;<br>fibo-fnd-dt-oc:hasEventDate &quot;xsd:dateTime&quot;</p>"]]:::literal
-
-    Calculation -. cmns-qtu:hasQuantityValue .-> OutputValue[[Output]]
-    Calculation -. cmns-qtu:hasExpression .-> Expression[[cmns-qtu:Expression]]
-    Expression -. cmns-qtu:hasArgument .-> Constant[[cmns-qtu:Constant]]
-    Expression -. cmns-qtu:hasArgument .-> Variable[[cmns-qtu:Variable]]
-    OutputValue --> Input[cmns-qtu:ScalarQuantityValue]
-    Constant --> Input
-    Variable --> Input
-```
-
-## 2.3 Reporting
-
-In reporting the services delivered as per the service agreement, a `Report` reports on the individual service occurrence via the `Record` concept. These records record one or more values, that may be directly or indirectly computed from the measures logged upon the successful completion of the service. Each occurrence can also have one or more records that records different information about the same occurrence. For instance, there can be two records to record the weight of a delivered good and its calculated price from the weight.
-
-Figure 8: TBox representation of a report for a service agreement
-
-```mermaid
-flowchart LR
-    %% Styling
-    classDef literal fill:none
-    classDef node overflow-wrap:break-word,text-wrap:pretty
-    linkStyle default overflow-wrap:break-word,text-wrap:pretty;
-
-    %% Contents
-    Report[[fibo-fnd-arr-rep:Report]] -. fibo-fnd-arr-rep:hasReportDate .-> Date[["<h4>cmns-dt:Date</h4><p style='font-size:0.75rem;'>cmns-dt:hasDateValue &quot;xsd:date&quot;</p>"]]:::literal
-    Report -. fibo-fnd-rel-rel:isProvidedBy .-> ReportingParty[[fibo-fnd-arr-rep:ReportingParty]]
-    Report -. cmns-doc:isAbout .-> Agreement[[fibo-fnd-pas-pas:ServiceAgreement]]
-    Report -. fibo-fnd-arr-rep:isReportedTo .-> Client
-
-    Agreement -. fibo-fnd-arr-rep:isRequestedBy .-> Client[[fibo-fnd-pas-pas:Client]]
-    Agreement -. fibo-fnd-agr-ctr:hasContractParty .-> ServiceProvider[[fibo-fnd-pas-pas:ServiceProvider]]
-    ServiceProvider -. cmns-rlcmp:isPlayedBy .-> Org[[fibo-fnd-org-fm:FormalOrganization]]
-    ReportingParty -. cmns-rlcmp:isPlayedBy .-> Org
-
-    Agreement -. fibo-fnd-arr-lif:hasLifecycle .-> LifecycleOccurrence[[fibo-fbc-pas-fpas:ContractLifecycleOccurrence]]
-    LifecycleOccurrence -. fibo-fnd-arr-lif:hasStage .-> StageOccurrence[[fibo-fbc-pas-fpas:ContractLifecycleStageOccurrence]]
-    StageOccurrence -. cmns-col:comprises .-> DeliveryOccurrence[[fibo-fbc-pas-fpas:ContractLifecycleEventOccurrence]]
-    DeliveryOccurrence -. fibo-fnd-rel-rel:exemplifies .-> ServiceDeliveryEvent[[ontoservice:ServiceDeliveryEvent]]
-
-    Report -. fibo-fnd-arr-rep:reportsOn .-> Record[[cmns-doc:Record]]
-    Record -. cmns-doc:refersTo .-> DeliveryOccurrence
-```
-
-### 2.3.1 Billing
-
-The billable amount for each service delivery is recorded as a new `CalculatedPrice` instance, derived from a pricing model and its inputs, along with any additional inputs. These additional inputs may come from a calculation event or other sources. The pricing model should be stipulated as part of the service agreement. Note that the variable fee must use **price per quantity** as a measurement unit. In the example below, price per tonne is used, and these extensions can be made in the `abox.ttl`.
-
-Figure 9: TBox representation of a billing record for a service agreement
-
-```mermaid
-flowchart LR
-    %% Styling
-    classDef literal fill:none
-    classDef node overflow-wrap:break-word,text-wrap:pretty
-    linkStyle default overflow-wrap:break-word,text-wrap:pretty;
-
-    %% Contents
     Agreement[[fibo-fnd-pas-pas:ServiceAgreement]] -. fibo-fnd-rel-rel:confers .-> PaymentObligation[[fibo-fnd-pas-psch:PaymentObligation]]
     PaymentObligation -. fibo-fnd-rel-rel:mandates .-> PricingModel[[fibo-fbc-fi-ip:PricingModel]]
+    Agreement -. property paths .-> AccrualOccurrence[[fibo-fbc-pas-fpas:ContractLifecycleEventOccurrence]]
 
-    DeliveryOccurrence[[fibo-fbc-pas-fpas:ContractLifecycleEventOccurrence]] -. fibo-fnd-rel-rel:exemplifies .-> ServiceDeliveryEvent[[ontoservice:ServiceDeliveryEvent]]
-    Record[[cmns-doc:Record]] -. cmns-doc:refersTo .-> DeliveryOccurrence
-    Record[[cmns-doc:Record]] -. cmns-doc:refersTo .-> Calculation
-    Record -. cmns-doc:records .-> ServiceFee[[fibo-fnd-acc-cur:CalculatedPrice]]
-
-    ServiceFee -. cmns-cxtdsg:uses .-> PricingModel[[fibo-fbc-fi-ip:PricingModel]]
-    ServiceFee -. cmns-qtu:hasExpression .-> CalculationExpression[[cmns-qtu:Expression]]
+    CalculatedPrice[[fibo-fnd-acc-cur:CalculatedPrice]] -. cmns-qtu:hasExpression .-> CalculationExpression[[cmns-qtu:Expression]]
+    CalculatedPrice -. cmns-cxtdsg:uses .-> PricingModel[[fibo-fbc-fi-ip:PricingModel]]
 
     PricingModel -. cmns-qtu:hasArgument .-> FlatFee[[Flat Fee]]
     FlatFee -.-> MonetaryPrice["<h4>fibo-fnd-acc-cur:MonetaryPrice</h4><p style='font-size:0.75rem;'>fibo-fnd-acc-cur:hasAmount &quot;xsd:decimal&quot;</p>"]:::literal
@@ -544,12 +609,27 @@ flowchart LR
     CalculationExpression -. cmns-qtu:hasArgument .-> FlatFee
     CalculationExpression -. cmns-qtu:hasArgument .-> Output[[cmns-qtu:ScalarQuantityValue]]
     CalculationExpression -. cmns-qtu:hasArgument .-> VariableFee
+    CalculationExpression -. cmns-qtu:hasArgument .-> MoneyAmount[[fibo-fnd-acc-cur:AmountOfMoney]]
 
-    Calculation[["<h4>fibo-fnd-dt-oc:Calculation</h4><p style='font-size:0.75rem;'>rdfs:comment &quot;string&quot;<br>fibo-fnd-dt-oc:hasEventDate &quot;xsd:dateTime&quot;</p>"]]:::literal -. cmns-qtu:hasQuantityValue .-> Output
-    CalculationEvent[[fibo-fnd-dt-oc:CalculationEvent]] -. cmns-cls:classifies .-> Calculation
+    Invoice[[p2p-o-doc:E-Invoice]]  -. cmns-doc:isAbout .-> AccrualOccurrence
+    AccrualOccurrence -. fibo-fnd-rel-rel:exemplifies .->  ServiceAccrualEvent[[ontoservice:ServiceAccrualEvent]]
+    Invoice  -. p2p-o-inv:hasTotalAmountWithVAT .-> CalculatedPrice
+    Invoice  -. p2p-o-inv:hasInvoiceLine .-> AddChargeInvoiceLine
+    Invoice  -. p2p-o-inv:hasInvoiceLine .-> DiscountInvoiceLine
+    Invoice  -. p2p-o-inv:hasInvoiceLine .-> ServiceChargeInvoiceLine["<h4>ServiceChargeInvoiceLine</h4><p style='font-size:0.75rem;'>p2p-o-doc-line:lineIdentifier &quot;xsd:string&quot;</p>"]:::literal
+
+    DiscountInvoiceLine -.-> InvoiceLine["<h4>p2p-o-doc-line:InvoiceLine</h4><p style='font-size:0.75rem;'>p2p-o-doc-line:lineNote &quot;xsd:string&quot;</p>"]:::literal
+    AddChargeInvoiceLine -.-> InvoiceLine
+    AddChargeInvoiceLine  -. p2p-o-item:hasItem .-> Item[["<h4>p2p-o-item:Item</h4><p style='font-size:0.75rem;'>p2p-o-item:itemDescription &quot;xsd:string&quot;</p>"]]:::literal
+
+    DiscountInvoiceLine  -. p2p-o-doc-line:hasPriceDiscountOfItem .-> MoneyAmount
+    ServiceChargeInvoiceLine -.-> InvoiceLine
+
+    InvoiceLine  -. p2p-o-doc-line:hasGrosspriceOfItem .-> MoneyAmount
+    InvoiceLine  -. p2p-o-doc-line:hasLineNetAmount .-> MoneyAmount
 ```
 
-The representation of the pricing model is intended to be highly flexible to accommadate different types of pricing models such as:
+The representation of the pricing model is intended to be highly flexible to accommodate different types of pricing models such as:
 
 1. **Flat fee pricing model**: A fixed fee regardless of the service details - Instantiate a flat fee argument with ONLY _ONE_ monetary price instance
 2. **Fixed trip variable weight pricing model**: A fixed delivery charge and a variable fee depending on the weight collected/delivered - Instantiate _ONE_ flat fee argument along with _ONE_ variable fee argument with no bounds
