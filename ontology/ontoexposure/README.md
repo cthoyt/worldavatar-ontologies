@@ -46,3 +46,9 @@ The ontology also supports:
   `exp:hasFilterValue`
 - result values, units, and percentiles through `exp:hasValue`, `exp:hasUnit`,
   and `exp:hasPercentile`
+
+## Generation
+
+`OntoExposure.csv` is the input to the
+[TBoxGenerator](https://github.com/TheWorldAvatar/baselib/tree/main/src/main/java/uk/ac/cam/cares/jps/base/converter),
+which generates `OntoExposure.owl`.
