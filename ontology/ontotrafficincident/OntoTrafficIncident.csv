@@ -1,5 +1,5 @@
 Source,Type,Target,Relation,Domain,Range,Quantifier,Comment,Defined By,Label
-OntoTrafficIncident,TBox,https://www.theworldavatar.com/kg/ontosealevel/,https://www.w3.org/2007/05/powder-s#hasIRI,,,,,,
+OntoTrafficIncident,TBox,https://www.theworldavatar.com/kg/ontotrafficincident/,https://www.w3.org/2007/05/powder-s#hasIRI,,,,,,
 OntoTrafficIncident,TBox,1,http://www.w3.org/2002/07/owl#versionInfo,,,,,,
 OntoTrafficIncident,TBox,The Ontology for Sea Level is developed to represent information about sea level.,http://www.w3.org/2000/01/rdf-schema#comment,,,,,,
 OntoTrafficIncident,TBox,,http://www.w3.org/2002/07/owl#imports,,,,,,
