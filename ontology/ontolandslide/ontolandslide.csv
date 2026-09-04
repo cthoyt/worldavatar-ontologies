@@ -1,5 +1,5 @@
 Source,Type,Target,Relation,Domain,Range,Quantifier,Comment,Defined By,Label,,
-OntoLandslide,TBox,http://www.theworldavatar.com/kg/ontowildfire/,https://www.w3.org/2007/05/powder-s#hasIRI,,,,,,,,
+OntoLandslide,TBox,http://www.theworldavatar.com/kg/ontolandslide/,https://www.w3.org/2007/05/powder-s#hasIRI,,,,,,,,
 OntoLandslide,TBox,1,http://www.w3.org/2002/07/owl#versionInfo,,,,,,,,
 OntoLandslide,TBox,OntoLandslide is an ontology developed to represent landslide hazard,http://www.w3.org/2000/01/rdf-schema#comment,,,,,,,,
 OntoLandslide,TBox,,http://www.w3.org/2002/07/owl#imports,,,,,,,,
