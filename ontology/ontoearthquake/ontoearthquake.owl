@@ -1,0 +1,1869 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.theworldavatar.com/kg/ontoearthquake#"
+     xml:base="http://www.theworldavatar.com/kg/ontoearthquake"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ontoearthquake="http://www.theworldavatar.com/kg/ontoearthquake#">
+    <owl:Ontology rdf:about="http://www.theworldavatar.com/kg/ontoearthquake">
+        <dc:date>04 September 2026</dc:date>
+        <gitCommitHash>c0599beca8df55873a1ab061dee64e52c510c6a0</gitCommitHash>
+        <rdfs:comment>OntoEarthquake is an ontology developed to represent earthquake hazard</rdfs:comment>
+        <owl:versionInfo>1</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#gitCommitHash -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#gitCommitHash"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#actionTaken -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#actionTaken">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Response"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#ResponseAction"/>
+        <rdfs:comment>Specifies the actions taken in response to a earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>action Taken</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#affects -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#affects">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Wildfire"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#EnvironmentComponent/InfrastructureComponent/LivingBeing"/>
+        <rdfs:comment>Indicates the components (environment, infrastructure, population) affected by an event like a wildfire or earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>affects</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#assessesFor -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#assessesFor">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#HazardAssessment"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Location"/>
+        <rdfs:comment>Relates an assessment process to the object or aspect being evaluated.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>assessesFor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#collectImpactData -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#collectImpactData">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Response"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#DamageAssessment"/>
+        <rdfs:comment>Refers to the collection of data related to the impact of an event.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>collectImpactData</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#detectedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#detectedBy">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Hypocenter/Epicenter"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#SeismicStation"/>
+        <rdfs:comment>Hypocenter or edicenter is detected by the seismic station</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>detected By</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#generates -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#generates">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#HazardAssessment"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#SeismicHazardForecast"/>
+        <rdfs:comment>Identifies the input parameters used for earthquake forecasting.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Input Parameter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasBeginning -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasBeginning">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Interval"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Instant"/>
+        <rdfs:comment>Defines the starting instant of an interval.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Beginning</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasEarthquakeHistory -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasEarthquakeHistory">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Location"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#EarthquakeHistory"/>
+        <rdfs:comment>Describes the historical data of earthquakes associated with a location.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Earthquake History</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasEnd -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasEnd">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Interval"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Instant"/>
+        <rdfs:comment>Defines the ending instant of an interval.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has End</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasEpicenter -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasEpicenter">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Earthquake"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Epicenter"/>
+        <rdfs:comment>Relates an earthquake to its epicenter, the point on the Earth&apos;s surface above the hypocenter.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Epicenter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasFileUrl -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasFileUrl">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#ShapeFile"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#FileUrl"/>
+        <rdfs:comment>Points to the URL of the shapefile.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has File Url</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasFrequency -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasFrequency">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Wave"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Oscillations"/>
+        <rdfs:comment>Defines the frequency of a wave.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Frequency</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasGeometry -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasGeometry">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Location"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+        <rdfs:comment>Indicates the geometric representation of a location.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Geometry</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasHypocenter -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasHypocenter">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Earthquake"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Hypocenter"/>
+        <rdfs:comment>Links an earthquake to its hypocenter, the point where the rupture starts.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Hypocenter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasLocation -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasLocation">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#SeismicStationORHypocenterOREpicenter"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Location"/>
+        <rdfs:comment>Links an event to the geographic location where it occurred.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasMitigationStrategy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasMitigationStrategy">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Preparedness"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#MitigationStrategy"/>
+        <rdfs:comment>Links a earthquake forecast to the earthquake it manages or predicts.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>manages Forecast Of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasRiskLevel -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasRiskLevel">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#SeismicHazardForecast"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#RiskLevel"/>
+        <rdfs:comment>Refers to the person who reported a warning sign.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>reported By</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasSeismicStation -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasSeismicStation">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#SeismicStation"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Location"/>
+        <rdfs:comment>Associates an earthquake or observation with the seismic station that recorded it.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Seismic Station</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasShapeFile -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasShapeFile">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Location"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#ShapeFile"/>
+        <rdfs:comment>Refers to the shapefile associated with a specific location.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Shape File</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasTimeInterval -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasTimeInterval">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Event"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Interval"/>
+        <rdfs:comment>Specifies the time interval during which an event occurred.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Time Interval</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasTimeSeries -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasTimeSeries">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#EarthquakeHistory"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#TimeSeries"/>
+        <rdfs:comment>hasTimeSeries: Links data to its time series, providing sequential time-based information</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Time Series</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasType -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasType">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Wave"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#WaveType"/>
+        <rdfs:comment>Specifies the type or category of a given object.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasVelocity -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasVelocity">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Wave"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Speed"/>
+        <rdfs:comment>Relates a wave to its velocity or speed.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Velocity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasWarningSystem -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasWarningSystem">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Preparedness"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#WarningSystem"/>
+        <rdfs:comment>Specifies the location for which a earthquake forecast is made.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Forecast Location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasWaveLength -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasWaveLength">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Wave"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#WaveLength"/>
+        <rdfs:comment>Relates a wave to its wavelength.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Wave Length</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#includes -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#includes">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#EarthquakeRiskManagement"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Recovery/Response/Preparedness/HazardAssessment"/>
+        <rdfs:comment>Earthquake risk management includes reovery, response, preparedness or hazard assessment</rdfs:comment>
+        <rdfs:comment>Links a geological layer to its water content.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>includes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#increasesResilience -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#increasesResilience">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Recovery"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#LongtermResilience"/>
+        <rdfs:comment>Identifies the causal factor responsible for an event.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>increases Resilience</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#informs -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#informs">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#SeismicHazardForecast"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#WarningSystem"/>
+        <rdfs:comment>warning system informs warnings</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>informs</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#isProducedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#isProducedBy">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#ShapeFile"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Organization"/>
+        <rdfs:comment>Identifies the organization that produced a shapefile.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>is Produced By</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#occurredInRegion -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#occurredInRegion">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Earthquake"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Location"/>
+        <rdfs:comment>Specifies the geographic region where an event occurred.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>occurred In Region</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#producesWarning -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#producesWarning">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#WarningSystem"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Warning"/>
+        <rdfs:comment>Links a data source to its metadata.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Data Source Metadata</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#requires -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#requires">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Earthquake"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#EarthquakeRiskManagement"/>
+        <rdfs:comment>Specifies a requirement to manage risk of earthquake</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>requires</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#responseBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#responseBy">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Response"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#ResponseDepartment"/>
+        <rdfs:comment>Refers to the department responsible for the response.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>response By</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#resultIn -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#resultIn">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Recovery"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Reconstruction"/>
+        <rdfs:comment>Associates a earthquake event with the response taken.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>resultIn</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#triggers -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#triggers">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Earthquake"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Fire/Flood/Tsunami/Landslide"/>
+        <rdfs:comment>Indicates that one event initiates or causes another</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>triggers</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#triggersResponse -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#triggersResponse">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#WarningSystem"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Response"/>
+        <rdfs:comment>Specifies that an event triggers a response action.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>triggersResponse</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#usedLogistics -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#usedLogistics">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Response"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#ResponseLogistics"/>
+        <rdfs:comment>Denotes the logistics used during the response to a earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>used Logistics</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#usesDataFrom -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#usesDataFrom">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#HazardAssessment"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#EarthObservationData"/>
+        <rdfs:comment>Connects an input parameter to its data source.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Data Source</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#usesGNSS -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#usesGNSS">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#EarthObservationData"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#GNSS"/>
+        <rdfs:comment>Indicates the earthquake that the warning sign is about.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>warns About</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#usesInSAR -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#usesInSAR">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#EarthObservationData"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#InSAR"/>
+        <rdfs:comment>Links a warning sign to its severity level.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Severity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#usesPreparedness -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#usesPreparedness">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#HazardAssessment"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Preparedness"/>
+        <rdfs:comment>Links an entity to preparedness actions or plans utilized during an event.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>usesPreparedness</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#usesSensor -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#usesSensor">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#EarthObservationData"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Sensor"/>
+        <rdfs:comment>Associates a earthquake spot with its current warning sign.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>current Warning Sign</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://seismic.balog.jp/ontology/jp-earthquake.ttl#observedWave -->
+
+
+    <owl:ObjectProperty rdf:about="https://seismic.balog.jp/ontology/jp-earthquake.ttl#observedWave">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Earthquake"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Wave"/>
+        <rdfs:comment>defines the observed characteristics or properties of seismic waves associated with an earthquake event, typically involving data related to wave type, speed, frequency, and other measurable parameters relevant to seismic activity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="https://seismic.balog.jp/ontology/jp-earthquake.ttl#"/>
+        <rdfs:label>observedWave</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasCollapsed -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasCollapsed">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#InfrastructureComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>This property represents the number of infrastructure (e.g., buildings, bridges) has collapsed due to the earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Collapsed</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasDamagedRadius -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasDamagedRadius">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Earthquake"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>hasDamagedRadius: Specifies the radius within which structural damage occurred due to the earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Damaged Radius </rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasDepth -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasDepth">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Earthquake"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Specifies the depth at which the earthquake originates beneath the Earth&apos;s surface.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Depth</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasEvacuated -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasEvacuated">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Population"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>This property indicates the number of people evacuated from the area due to the earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Evacuated</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasFeltRadius -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasFeltRadius">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Earthquake"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Defines the radius around the epicenter where the earthquake is perceptible.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Felt Radius</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasLat -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasLat">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment>This property represents the latitude coordinate of a specific earthquake location, expressed as a floating-point number.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Lat</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasLon -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasLon">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment>This property represents the longitude coordinate of a specific earthquake location, expressed as a floating-point number.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Lon</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasLossOfLife -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasLossOfLife">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Population"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>This property represents the total number of human lives lost due to the earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Loss Of Life</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasMercalliIntensity -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasMercalliIntensity">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Earthquake"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Denotes the earthquake&apos;s intensity as perceived by people, using the Mercalli Intensity Scale.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>hasMercalliIntensity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasMomentMagnitude -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasMomentMagnitude">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Earthquake"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Indicates the earthquake&apos;s magnitude based on the seismic moment (energy released).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Moment Magnitude</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasPartialDamage -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasPartialDamage">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#InfrastructureComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>This property represents the number of infrastructure or assets have sustained partial damage from the earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Partial Damage</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasRichterScale -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasRichterScale">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Earthquake"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Represents the magnitude of the earthquake as measured by the Richter scale.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Richter Scale</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasTotalAffected -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasTotalAffected">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#EnvironmentComponent/InfrastructureComponent/LivingBeing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>This property indicates the total number of people, animals, or assets affected by the earthquake, measured as an integer value.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Total Affected</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#hasTotalMonetaryValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#hasTotalMonetaryValue">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#EnvironmentComponent/InfrastructureComponent/LivingBeing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>This property represents the total financial loss or damage caused by the earthquake, expressed as a monetary value.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>has Total Monetary Value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#inDanger -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#inDanger">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#EnvironmentComponentUnionInfrastructureComponentUnionPopulation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>This property indicates the number of people or assets currently at risk due to the earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>in Danger</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#lastUpdateOn -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#lastUpdateOn">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#ShapeFile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>This property represents the timestamp of the most recent update related to the earthquake situation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>last Update On</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Geometry -->
+
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Geometry">
+        <rdfs:comment>A class representing geometric shapes or locations as part of the GeoSPARQL ontology.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.opengis.net/ont/geosparql#"/>
+        <rdfs:label>Geometry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Accelerometer -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Accelerometer">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Sensor"/>
+        <rdfs:comment>A device that measures the acceleration of ground motion during an earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Warning Sign</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#AfterShock -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#AfterShock">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Earthquake"/>
+        <rdfs:comment>A smaller earthquake that follows the main seismic event, occurring in the same area.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>After Shock</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Air -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Air">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#EnvironmentComponent"/>
+        <rdfs:comment>The atmosphere and its quality as influenced by seismic activities.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Air</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Animal -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Animal">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#LivingBeing"/>
+        <rdfs:comment>Non-human living organisms potentially affected by seismic activities.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#AreaInfrastructure -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#AreaInfrastructure">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#InfrastructureComponent"/>
+        <rdfs:comment>Regional infrastructure components potentially vulnerable to earthquake damage.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Area Infrastructure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#BuildingRetrofitting -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#BuildingRetrofitting">
+        <rdfs:comment>The process of strengthening existing buildings to withstand future earthquakes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Building Retrofitting</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#CommercialInfrastructure -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#CommercialInfrastructure">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#AreaInfrastructure"/>
+        <rdfs:comment>Business-related infrastructure such as shops and offices that may be impacted by an earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Commercial Infrastructure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Community -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Community">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#ResponseDepartment"/>
+        <rdfs:comment>A group of people living in an area impacted or potentially impacted by an earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Community</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#CriticalInfrastructure -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#CriticalInfrastructure">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#AreaInfrastructure"/>
+        <rdfs:comment>Essential infrastructure systems like hospitals, energy, and communication systems crucial for earthquake response.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Critical Infrastructure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#DamageAssessment -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#DamageAssessment">
+        <rdfs:comment>Evaluation of the damage caused by an earthquake to infrastructure, environment, and population.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Damage Assessment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#EarthObservationData -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#EarthObservationData">
+        <rdfs:comment>Data collected from satellites and sensors that monitor seismic and geophysical changes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Earth Observation Data</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Earthquake -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Earthquake">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Event"/>
+        <rdfs:comment>A sudden and violent shaking of the ground, caused by movements within the earth’s crust.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Earthquake</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#EarthquakeHistory -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#EarthquakeHistory">
+        <rdfs:comment>A record of past earthquake events, including their properties and impacts.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Earthquake History</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#EarthquakeRiskManagement -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#EarthquakeRiskManagement">
+        <rdfs:comment>The process of planning, mitigating, responding to, and recovering from the impacts of earthquakes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Earthquake Risk Management</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Ecosystem -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Ecosystem">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#EnvironmentComponent"/>
+        <rdfs:comment>The community of living organisms and their environment potentially impacted by an earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Crop</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#EnvironmentComponent -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#EnvironmentComponent">
+        <rdfs:comment>The natural elements such as air, water, and soil that may be impacted by earthquakes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Environment Component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#EnvironmentComponentUnionInfrastructureComponentUnionPopulation -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#EnvironmentComponentUnionInfrastructureComponentUnionPopulation"/>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Epicenter -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Epicenter">
+        <rdfs:comment>The point on the earth&apos;s surface directly above the hypocenter of an earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Epicenter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Event -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Event">
+        <rdfs:comment>Represents any occurrence or happening that affects entities or locations.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#FileUrl -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#FileUrl">
+        <rdfs:comment>A link to a digital file, often containing critical geospatial or earthquake-related information.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>File Url</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Fire -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Fire">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Event"/>
+        <rdfs:comment>An uncontrolled combustion event that may be triggered by seismic activity, affecting nearby infrastructure.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Fire</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Flood -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Flood">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Event"/>
+        <rdfs:comment>An overflow of water onto normally dry land, which may occur following a tsunami or other seismic events.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Flood</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#ForeShock -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#ForeShock">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Earthquake"/>
+        <rdfs:comment>A smaller earthquake that precedes the main seismic event, indicating potential upcoming seismic activity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Fore Shock</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#GNSS -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#GNSS">
+        <rdfs:comment>Global Navigation Satellite Systems used to measure ground movement before, during, and after earthquakes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>GNSS</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#GPSSensors -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#GPSSensors">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Sensor"/>
+        <rdfs:comment>Sensors using GPS technology to monitor tectonic movements and seismic activities.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Government -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Government">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#ResponseDepartment"/>
+        <rdfs:comment>Official entities involved in earthquake preparedness, response, and recovery efforts.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Government</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#HazardAssessment -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#HazardAssessment">
+        <rdfs:comment>The process of evaluating potential earthquake hazards and their possible impacts.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Human Factor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#HydroacousticSensor -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#HydroacousticSensor">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Sensor"/>
+        <rdfs:comment>Underwater sensors used to detect seismic waves or changes in the water column during seismic events.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Resident</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Hypocenter -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Hypocenter">
+        <rdfs:comment>The point beneath the earth&apos;s surface where an earthquake begins.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Hypocenter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#InSAR -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#InSAR">
+        <rdfs:comment>Interferometric Synthetic Aperture Radar technology for mapping ground deformation from space.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>In SAR</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#InactiveearthquakeWarning -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#InactiveearthquakeWarning">
+        <rdfs:comment>A status indicating that no active earthquake threat is currently present.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Inactive earthquake Warning</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#IndustrialInfrastructure -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#IndustrialInfrastructure">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#AreaInfrastructure"/>
+        <rdfs:comment>Factories and other industrial facilities that may be affected by an earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Industrial Infrastructure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#InfrastructureComponent -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#InfrastructureComponent">
+        <rdfs:comment>Physical structures and systems such as buildings and networks affected by an earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Infrastructure Component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Instant -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Instant">
+        <rdfs:comment>A precise point in time at which an event occurs.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Instant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Interval -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Interval">
+        <rdfs:comment>A period between two instants, marking the start and end of an event.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Interval</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#LIDARSensor -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#LIDARSensor">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Sensor"/>
+        <rdfs:comment>A sensor that uses laser technology to map and detect changes in Earth&apos;s surface.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Crack On Wall</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#LandUsePlanning -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#LandUsePlanning">
+        <rdfs:comment> Strategic planning for land development and management to minimize earthquake risks.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Land Use Planning</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Landslide -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Landslide">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Event"/>
+        <rdfs:comment>A mass movement of earth, rock, or debris down a slope, typically caused by gravitational pull.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Landslide</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#LivingBeing -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#LivingBeing">
+        <rdfs:comment>including humans and animals, that may be impacted by earthquakes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Population</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Location -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Location">
+        <rdfs:comment>A geographic area or point where an earthquake or related event occurs.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Location</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#LongtermResilience -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#LongtermResilience"/>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#MainShock -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#MainShock">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Earthquake"/>
+        <rdfs:comment>The largest and most significant earthquake in a sequence of seismic events.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Main Shock</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#MedicalAndRescueLogistics -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#MedicalAndRescueLogistics">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#ResponseLogistics"/>
+        <rdfs:comment>Management of medical supplies and rescue operations following an earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Medical And Rescue Logistics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#MedicalCentre -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#MedicalCentre">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#ResponseDepartment"/>
+        <rdfs:comment>Facilities providing medical services to treat casualties after an earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Medical Centre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#MitigationStrategy -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#MitigationStrategy">
+        <rdfs:comment>Plans and actions designed to reduce the long-term risks associated with earthquakes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Natural Factor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#MobilityAndEquipmentLogistics -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#MobilityAndEquipmentLogistics">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#ResponseLogistics"/>
+        <rdfs:comment>Coordination of vehicles and equipment used in earthquake response.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Mobility And Equipment Logistics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#MobilityNetwork -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#MobilityNetwork">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#NetworkInfrastructure"/>
+        <rdfs:comment>Transportation systems crucial for evacuating and responding to earthquakes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Mobility Network</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#NetworkInfrastructure -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#NetworkInfrastructure">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#InfrastructureComponent"/>
+        <rdfs:comment>Communication and transportation networks necessary for response and recovery during an earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Network Infrastructure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Organization -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Organization">
+        <rdfs:comment>A formal entity responsible for coordinating or managing earthquake response, preparedness, or recovery.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Oscillations -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Oscillations">
+        <rdfs:comment>Repeated motions or movements, often used to describe the movement of seismic waves.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Oscillations</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Population -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Population">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#LivingBeing"/>
+        <rdfs:comment>A group of humans living in a region affected by an earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Population</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Preparedness -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Preparedness">
+        <rdfs:comment>Planning and readiness activities aimed at minimizing the impacts of future earthquakes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Causal Factor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#ProvisioningNetwork -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#ProvisioningNetwork">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#NetworkInfrastructure"/>
+        <rdfs:comment>Systems that deliver essential services such as food, water, and electricity, critical during earthquake recovery.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Provisioning Network</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Reconstruction -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Reconstruction"/>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Recovery -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Recovery"/>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#ResidentialInfrastructure -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#ResidentialInfrastructure">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#AreaInfrastructure"/>
+        <rdfs:comment>Housing and living spaces that could be damaged during an earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Residential Infrastructure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#ResourceLogistics -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#ResourceLogistics">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#ResponseLogistics"/>
+        <rdfs:comment>Allocation and distribution of essential resources during an earthquake response.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Resource Logistics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Response -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Response">
+        <rdfs:comment>Actions taken immediately after an earthquake to manage its consequences.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Response</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#ResponseAction -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#ResponseAction">
+        <rdfs:comment>Specific steps carried out to address the immediate impacts of an earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Response Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#ResponseDepartment -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#ResponseDepartment">
+        <rdfs:comment>The official body responsible for coordinating response activities during an earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Response Department</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#ResponseLogistics -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#ResponseLogistics">
+        <rdfs:comment>Planning and coordination of resources needed to respond effectively to an earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Response Logistics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#RiskLevel -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#RiskLevel"/>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#SeismicHazardForecast -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#SeismicHazardForecast">
+        <rdfs:comment>Predictions of potential seismic activities in a region based on historical and current data.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Seismic Hazard Forecast</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#SeismicSensor -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#SeismicSensor">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Sensor"/>
+        <rdfs:comment>A device that detects vibrations and seismic waves generated by earthquakes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Social Media Worker</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#SeismicStation -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#SeismicStation">
+        <rdfs:comment>A facility equipped with instruments to detect and record seismic activity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Seismic Station</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#SeismicStationORHypocenterOREpicenter -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#SeismicStationORHypocenterOREpicenter"/>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Sensor -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Sensor">
+        <rdfs:comment>Devices used to detect and record seismic activities and environmental changes related to earthquakes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Settlement -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Settlement">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#ResponseDepartment"/>
+        <rdfs:comment>A populated area affected or potentially affected by an earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Settlement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#SevereearthquakeWarning -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#SevereearthquakeWarning">
+        <rdfs:comment>A warning issued for highly destructive earthquakes with serious potential damage.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Severe earthquake Warning</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Severity -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Severity">
+        <rdfs:comment>The magnitude and intensity of the earthquake and its potential impact.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Severity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#ShapeFile -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#ShapeFile">
+        <rdfs:comment>A geospatial vector data format used to represent the geometric location and attributes of features.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Shape File</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Soil -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Soil">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#EnvironmentComponent"/>
+        <rdfs:comment>The Earth&apos;s upper layer, potentially disrupted by earthquakes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Soil</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Speed -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Speed">
+        <rdfs:comment>The velocity at which seismic waves travel through the earth.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Speed</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Strainmeter -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Strainmeter">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Sensor"/>
+        <rdfs:comment>A device that measures deformation in the Earth&apos;s crust due to tectonic forces.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Broken Underground Utility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Tiltmeter -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Tiltmeter">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Sensor"/>
+        <rdfs:comment>A sensor that measures the tilting of the ground, often associated with tectonic movements.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Leaning Electric Pole</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#TimeSeries -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#TimeSeries">
+        <rdfs:comment>A sequence of data points indexed in time order, often used to track changes in seismic activity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Time Series</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Tsunami -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Tsunami">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Event"/>
+        <rdfs:comment>A series of ocean waves caused by large underwater seismic activity, such as an earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Tsunami</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#TsunamiBuoysSensor -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#TsunamiBuoysSensor">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#Sensor"/>
+        <rdfs:comment>Sensors deployed in the ocean to detect tsunami waves caused by underwater earthquakes.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Expert</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#VegetationDestruction -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#VegetationDestruction">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#EnvironmentComponent"/>
+        <rdfs:comment>The damage caused to plant life due to seismic activities.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>VegetationDestruction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Warning -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Warning">
+        <rdfs:comment>A notification alerting people to potential earthquake hazards.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Warning</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#WarningSystem -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#WarningSystem">
+        <rdfs:comment>A system designed to alert populations of an imminent earthquake threat.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Slope Excavation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Water -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Water">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake#EnvironmentComponent"/>
+        <rdfs:comment>Aquatic bodies that may be influenced by seismic activity or resulting tsunamis.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Water</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Wave -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Wave">
+        <rdfs:comment>The oscillation or movement that propagates through the earth due to seismic activity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Wave</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#WaveLength -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#WaveLength">
+        <rdfs:comment>The distance between successive crests of a wave, particularly in seismic studies.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Wave Length</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#WaveType -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#WaveType">
+        <rdfs:comment>A classification of seismic waves based on their behavior, such as primary (P) or secondary (S) waves.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>Wave Type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Wildfire -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Wildfire"/>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#earthquakeAlert -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#earthquakeAlert">
+        <rdfs:comment>An early notification of an impending earthquake.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>earthquake Alert</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#earthquakeWarning -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#earthquakeWarning">
+        <rdfs:comment>A more detailed notification indicating a high probability of an earthquake occurring soon.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontoearthquake"/>
+        <rdfs:label>earthquake Warning</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#EnvironmentComponent/InfrastructureComponent/LivingBeing -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#EnvironmentComponent/InfrastructureComponent/LivingBeing"/>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Fire/Flood/Tsunami/Landslide -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Fire/Flood/Tsunami/Landslide"/>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Hypocenter/Epicenter -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Hypocenter/Epicenter"/>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontoearthquake#Recovery/Response/Preparedness/HazardAssessment -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontoearthquake#Recovery/Response/Preparedness/HazardAssessment"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.5.0.2023-01-14T12:41:38Z) https://github.com/owlcs/owlapi/ -->
+
+
