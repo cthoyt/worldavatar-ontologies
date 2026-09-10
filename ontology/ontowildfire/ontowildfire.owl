@@ -1,0 +1,1899 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.theworldavatar.com/kg/ontowildfire/"
+     xml:base="http://www.theworldavatar.com/kg/ontowildfire/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ontowildfire="http://www.theworldavatar.com/kg/ontowildfire/">
+    <owl:Ontology rdf:about="http://www.theworldavatar.com/kg/ontowildfire/">
+        <dc:date>04 September 2026</dc:date>
+        <gitCommitHash>c0599beca8df55873a1ab061dee64e52c510c6a0</gitCommitHash>
+        <rdfs:comment>OntoWildfire is an ontology developed to represent wildfires.</rdfs:comment>
+        <owl:versionInfo>1</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/gitCommitHash -->
+
+
+    <owl:AnnotationProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/gitCommitHash"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/actionTaken -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/actionTaken">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Response"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/ResponseAction"/>
+        <rdfs:comment>Describes the specific actions or measures undertaken in response to an event.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>action Taken</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/affects -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/affects">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Wildfire"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/EnvironmentComponentUnionInfrastructureComponentUnionPopulation"/>
+        <rdfs:comment>Links an event or process to the entities (such as populations or infrastructure) it influences or impacts.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>affects</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/analysedToProduce -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/analysedToProduce">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Dataset"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Alert"/>
+        <rdfs:comment>Indicates that data or observations have been analyzed to produce an outcome, such as a report or alert.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>analysedToProduce</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/contains -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/contains">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Dataset"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/MediaItem"/>
+        <rdfs:comment>Specifies that one entity (like a report or dataset) includes or contains another entity, such as media or additional data.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>contains</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/deployedAt -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/deployedAt">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Sensor"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Location"/>
+        <rdfs:comment>Refers to the specific location or context where resources, such as firefighting equipment, were deployed.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>deployed at</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/detectedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/detectedBy">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/WeatherCondition"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Sensor"/>
+        <rdfs:comment>Indicates the sensor, system, or entity responsible for detecting a fire or related event.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>detected by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/enables -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/enables">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Observation"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Detection"/>
+        <rdfs:comment>Indicates that a particular condition or factor enables or facilitates an event or action.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>enables</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasBeginning -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasBeginning">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Interval"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Instant"/>
+        <rdfs:comment>Describes the starting point of an event or time-based process.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Beginning</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasCO2Level -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasCO2Level">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Observation"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/CO2Level"/>
+        <rdfs:comment>Specifies the carbon dioxide level measured during a fire event, providing insight into combustion and air quality.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has CO2 Level</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasCaharacteristics -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasCaharacteristics">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Wildfire"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Characteristics"/>
+        <rdfs:comment>Describes the specific features or traits of an event, object, or phenomenon.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Caharacteristics</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasCausalFactor -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasCausalFactor">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Event"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/CausalFactor"/>
+        <rdfs:comment>Identifies the cause or factor that led to the occurrence of an event.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Causal Factor</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasEnd -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasEnd">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Interval"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Instant"/>
+        <rdfs:comment>Describes the ending point of an event or time-based process.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has End</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasFeatureOfInterest -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasFeatureOfInterest">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Observation"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/FeatureOfInterest"/>
+        <rdfs:comment>Describes the specific feature or element (e.g., temperature, wind) that is the focus of an observation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Feature Of Interest</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasFileUrl -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasFileUrl">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/ShapeFile"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/FileUrl"/>
+        <rdfs:comment>Provides a URL linking to a file or document related to the event or process.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has File URL</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasFireLocation -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasFireLocation">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Wildfire"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Location"/>
+        <rdfs:comment>Specifies the location where a fire incident has occurred.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Fire Location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasGeometry -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasGeometry">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Location"/>
+        <rdfs:range rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasHumidity -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasHumidity">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Observation"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/HumidityValue"/>
+        <rdfs:comment>Describes the humidity levels recorded during an event, which may affect wildfire behavior.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Humidity</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasInfraredValue -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasInfraredValue">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Observation"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/InfraredValue"/>
+        <rdfs:comment>Specifies the infrared reading detected by a sensor during an event, such as during fire detection.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Infrared Value</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasLocation -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasLocation">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Event"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Location"/>
+        <rdfs:comment>Links the event or object to its geographical location.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasMonetaryValue -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasMonetaryValue">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Impact"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/AmountOfMoney"/>
+        <rdfs:comment>Associates an event, such as a disaster or impact, with a financial cost or valuation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Monetary Value</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasPrecipitation -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasPrecipitation">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Observation"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Precipitation"/>
+        <rdfs:comment>Relates to the amount or rate of precipitation (rain, snow, etc.) observed during an event.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Precipitation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasPressure -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasPressure">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Observation"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/AtmosphericPressureValue"/>
+        <rdfs:comment>Relates to the atmospheric pressure value observed or recorded during an event.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Pressure</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasResponse -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasResponse">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Wildfire"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Response"/>
+        <rdfs:comment>Specifies the reaction or response given to an event, such as a wildfire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Response</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasShapeFile -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasShapeFile">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Location"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/ShapeFile"/>
+        <rdfs:comment>Links an event or geographic feature to a shapefile used in geographic information systems (GIS).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Shape File</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasSmokeValue -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasSmokeValue">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Observation"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/SmokeValue"/>
+        <rdfs:comment>Refers to the concentration or amount of smoke observed by a sensor.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Smoke Value</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasTemperature -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasTemperature">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Observation"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/TempValue"/>
+        <rdfs:comment>Indicates the temperature value measured by a sensor during an event.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Temperature</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasTimeInterval -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasTimeInterval">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Event"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Interval"/>
+        <rdfs:comment>Relates an event or phenomenon to a specific period or duration of time.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Time Interval</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasWeatherCondition -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasWeatherCondition">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Location"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/WeatherCondition"/>
+        <rdfs:comment>Describes the weather conditions associated with an event, such as during a wildfire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Weather Condition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasWindCondition -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasWindCondition">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Observation"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/WindCondition"/>
+        <rdfs:comment>Describes the wind conditions, such as speed and direction, during a wildfire or event.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Wind Condition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/isProducedBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/isProducedBy">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/ShapeFile"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Organization"/>
+        <rdfs:comment>Identifies the organization or entity that created or produced a report, dataset, or analysis.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>is Produced By</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/recordedIn -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/recordedIn">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Observation"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Dataset"/>
+        <rdfs:comment>Links an observation or event to the dataset or system where it has been recorded.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>recorded In</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/responseBy -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/responseBy">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Response"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/ResponseDepartment"/>
+        <rdfs:comment>Indicates the organization, government, or entity responsible for carrying out a response.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>response By</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/resultIn -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/resultIn">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Event"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Impact"/>
+        <rdfs:comment>Indicates the outcome or consequence of a particular event or process.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>result In</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/usedLogistics -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/usedLogistics">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Response"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/ResponseLogistics"/>
+        <rdfs:comment>Refers to the logistical resources or infrastructure deployed during a response action.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>used Logistics</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/madeObservation -->
+
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa/madeObservation">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Sensor"/>
+        <rdfs:range rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Observation"/>
+        <rdfs:comment>Specifies that a sensor or system has made a particular observation, such as temperature or smoke levels.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.w3.org/ns/sosa/"/>
+        <rdfs:label>made Observation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasCategory -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasCategory">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Alert"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>This property classifies the wildfire event into a specific category, such as &quot;forest fire,&quot; &quot;grassland fire,&quot; etc.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Category</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasCollapsed -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasCollapsed">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/InfrastructureComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>This property represents whether infrastructure (e.g., buildings, bridges) has collapsed due to the wildfire. It is a boolean value (True/False).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Collapsed</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasDescription -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasDescription">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Alert"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>This property provides a textual description of the wildfire event or related actions.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasEvacuated -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasEvacuated">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Population"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>This property indicates the number of people evacuated from the area due to the wildfire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Evacuated</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasLat -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasLat">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment>This property represents the latitude coordinate of a specific wildfire location, expressed as a floating-point number.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Latitude</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasLon -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasLon">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment>This property represents the longitude coordinate of a specific wildfire location, expressed as a floating-point number.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Longitude</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasLossOfLife -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasLossOfLife">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Population"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>This property represents the total number of human lives lost due to the wildfire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Loss of Life</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasMediaSource -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasMediaSource">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Alert"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>This property identifies the media source providing information or reports about the wildfire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Media Source</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasPartialDamage -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasPartialDamage">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/InfrastructureComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>This property represents whether infrastructure or assets have sustained partial damage from the wildfire. It is a boolean value (True/False).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Partial Damage</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasScope -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasScope">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Alert"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>This property defines the scope or extent of the wildfire, indicating how widespread the event is.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Scope</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasSeverity -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasSeverity">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Alert"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>This property indicates the severity of the wildfire in terms of impact on people, property, and the environment.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Severity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasSource -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasSource">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Alert"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>This property identifies the origin or source of information about the wildfire event.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Source</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasStakeholder -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasStakeholder">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Alert"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>This property identifies key stakeholders involved in the wildfire event, such as fire departments, government agencies, or environmental organizations.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Stakeholder</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasStatus -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasStatus">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Alert"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>This property indicates the current status of the wildfire, such as &quot;active,&quot; &quot;contained,&quot; or &quot;extinguished.&quot;</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Status</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasTotalAffected -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasTotalAffected">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/EnvironmentComponentUnionInfrastructureComponentUnionPopulation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>This property indicates the total number of people, animals, or assets affected by the wildfire, measured as an integer value.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Total Affected</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasTotalMonetaryValue -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasTotalMonetaryValue">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/EnvironmentComponentUnionInfrastructureComponentUnionPopulation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>This property represents the total financial loss or damage caused by the wildfire, expressed as a monetary value.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Total Monetary Value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hasUrgency -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hasUrgency">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Alert"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>This property represents the urgency level of actions required in response to the wildfire, indicating whether immediate or delayed action is needed.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has Urgency</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/hastimeStamp -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/hastimeStamp">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Alert"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>This property stores the exact timestamp of an event or data entry related to the wildfire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>has time Stamp</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/inDanger -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/inDanger">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/EnvironmentComponentUnionInfrastructureComponentUnionPopulation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>This property indicates the number of people or assets currently at risk due to the wildfire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>in Danger</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/lastUpdateOn -->
+
+
+    <owl:DatatypeProperty rdf:about="http://www.theworldavatar.com/kg/ontowildfire/lastUpdateOn">
+        <rdfs:domain rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/ShapeFile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment>This property represents the timestamp of the most recent update related to the wildfire situation.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>last Update On</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Geometry -->
+
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Geometry">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Location"/>
+        <rdfs:comment>The spatial properties and shape of fire-related features, such as fire perimeters or spread areas.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.opengis.net/ont/geosparql#"/>
+        <rdfs:label>Geometry</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/AirQualitySensor -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/AirQualitySensor">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Sensor"/>
+        <rdfs:comment>A device that monitors the quality of air, often measuring pollutants related to fire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Air Quality Sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Alert -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Alert">
+        <rdfs:comment>A warning or notification regarding fire or related emergencies.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Alert</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/AmountOfMoney -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/AmountOfMoney">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Impact"/>
+        <rdfs:comment>The financial cost or resources required for fire response or recovery.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Amount of Money</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/AnnualPrecipitation -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/AnnualPrecipitation">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Precipitation"/>
+        <rdfs:comment>The total amount of precipitation accumulated over a year.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Annual Precipitation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Anomaly -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Anomaly">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Characteristics"/>
+        <rdfs:comment>An unusual or irregular occurrence, often signifying a deviation from the norm.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Anomaly</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/AreaInfrastructure -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/AreaInfrastructure">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/InfrastructureComponent"/>
+        <rdfs:comment>Infrastructure in a specific geographical area, including utilities and transportation systems.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Area Infrastructure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/AtmosphericPressureSensor -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/AtmosphericPressureSensor">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Sensor"/>
+        <rdfs:comment>A device that measures the atmospheric pressure, which can affect fire behavior.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Atmospheric Pressure Sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/AtmosphericPressureValue -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/AtmosphericPressureValue">
+        <rdfs:comment>A specific reading of atmospheric pressure during fire-related events.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Atmospheric Pressure Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/BuildUpIndex -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/BuildUpIndex">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Indices"/>
+        <rdfs:comment>An index representing the accumulation of fuel that could contribute to fire growth.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Build Up Index</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/CO2Level -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/CO2Level">
+        <rdfs:comment>The concentration of carbon dioxide in the atmosphere, often influenced by fire activity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>CO2 Level</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/CausalFactor -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/CausalFactor">
+        <rdfs:comment>The underlying reason or cause for a fire event.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Causal Factor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Characteristics -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Characteristics">
+        <rdfs:comment>Qualities or features that define or describe something, often used in the context of phenomena like fire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Characteristics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/CommercialInfrastructure -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/CommercialInfrastructure">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/AreaInfrastructure"/>
+        <rdfs:comment>Buildings or systems related to businesses or economic activities affected by fire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Commercial Infrastructure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/CrownFire -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/CrownFire">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Fire"/>
+        <rdfs:comment>A fire that spreads to the tops of trees or shrubs, often more intense and difficult to control.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Crown Fire</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/DailySeverityRating -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/DailySeverityRating">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Indices"/>
+        <rdfs:comment>A daily estimate of fire intensity based on weather and fuel conditions.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Daily Severity Rating</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Dataset -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Dataset">
+        <rdfs:comment>A collection of data, often used in analyzing or predicting fire behavior.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Dataset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Detection -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Detection">
+        <rdfs:comment>The identification of fire or related conditions through sensors or observations.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Detection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Direction -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Direction">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/WindCondition"/>
+        <rdfs:comment>The angle or course along which the wind is blowing, impacting fire direction.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Direction</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/DroughtAnomaly -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/DroughtAnomaly">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Anomaly"/>
+        <rdfs:comment>An unusual period of dry conditions that differs from normal drought patterns.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Drought Anomaly</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/DuffMoistureAnomaly -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/DuffMoistureAnomaly">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Anomaly"/>
+        <rdfs:comment>An abnormal change in the moisture content of decomposing organic material on the forest floor.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Duff Moisture Anomaly</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/EnvironmentComponent -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/EnvironmentComponent">
+        <rdfs:comment>Parts of the natural environment impacted by fire, such as air, water, or soil.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Environment Component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/EnvironmentComponentUnionInfrastructureComponentUnionPopulation -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/EnvironmentComponentUnionInfrastructureComponentUnionPopulation"/>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Equipment -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Equipment">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/ResponseLogistics"/>
+        <rdfs:comment>Tools and machinery used in fire suppression or prevention.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Equipment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Event -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Event">
+        <rdfs:comment>Any occurrence or incident, often associated with a particular time or place.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/FWIAnomaly -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/FWIAnomaly">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Anomaly"/>
+        <rdfs:comment>A deviation from typical readings in the Fire Weather Index, indicating abnormal fire weather conditions.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>FWI Anomaly</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/FeatureOfInterest -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/FeatureOfInterest">
+        <rdfs:comment>A specific object, area, or event being monitored, often related to fire management.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Feature of Interest</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/FileUrl -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/FileUrl">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/ShapeFile"/>
+        <rdfs:comment>A link to access digital files related to fire data or analysis.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>File Url</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/FineFuelMoistureAnomaly -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/FineFuelMoistureAnomaly">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Anomaly"/>
+        <rdfs:comment>An irregularity in the moisture levels of small, flammable vegetation, affecting fire behavior.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Fine Fuel Moisture Anomaly</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Fire -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Fire">
+        <rdfs:comment>A general concept representing any combustion event that emits heat, light, and smoke, often causing destruction.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Fire</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/FireBehaviour -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/FireBehaviour">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Characteristics"/>
+        <rdfs:comment>The manner in which fire ignites, spreads, and interacts with the environment.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Fire Behaviour</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/FireBrigade -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/FireBrigade">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/ResponseDepartment"/>
+        <rdfs:comment>A professional team tasked with responding to and extinguishing fires.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Fire Brigade</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/FireDynamics -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/FireDynamics">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Characteristics"/>
+        <rdfs:comment>The study of how a fire behaves over time, including its spread, growth, and energy release.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Fire Dynamics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/FireFront -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/FireFront">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/FireBehaviour"/>
+        <rdfs:comment>The leading edge of a spreading fire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Fire Front</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/FireIntensity -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/FireIntensity">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/FireBehaviour"/>
+        <rdfs:comment>The amount of heat energy released by a fire at a specific location.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Fire Intensity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/FirePerimeter -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/FirePerimeter">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/FireBehaviour"/>
+        <rdfs:comment>The outer boundary or edge of the area affected by a fire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Fire Perimeter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/FireWeatherIndex -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/FireWeatherIndex">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Indices"/>
+        <rdfs:comment>A numerical value indicating the potential for fire based on weather conditions.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Fire Weather Index</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/FlameHeight -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/FlameHeight">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/FireBehaviour"/>
+        <rdfs:comment>The vertical measurement from the ground to the tip of a fire’s flames.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Flame Height</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Government -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Government">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/ResponseDepartment"/>
+        <rdfs:comment>The authority responsible for fire regulation, management, and emergency response.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Government</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/GroundFire -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/GroundFire">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Fire"/>
+        <rdfs:comment>A fire that burns below the surface, consuming organic material in the soil like peat or roots.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Ground Fire</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/HighRisk -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/HighRisk">
+        <rdfs:comment>A condition where the potential for fire is significant, necessitating preventive actions.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>High Risk</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/HumidityValue -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/HumidityValue">
+        <rdfs:comment>A specific measurement of moisture in the air, which can influence fire spread.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Humidity Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Impact -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Impact">
+        <rdfs:comment>The effects or consequences of a fire on people, property, or the environment.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Impact</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Indices -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Indices">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Characteristics"/>
+        <rdfs:comment>Metrics or measurements used to assess various conditions related to fire, often in the context of weather or fire danger.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Indices</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/IndustrialInfrastructure -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/IndustrialInfrastructure">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/AreaInfrastructure"/>
+        <rdfs:comment>Factories, warehouses, or other industrial buildings at risk from fire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Industrial Infrastructure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/InfraredSensor -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/InfraredSensor">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Sensor"/>
+        <rdfs:comment>A device that detects heat signatures, often used to monitor fire or hotspots.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Infrared Sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/InfraredValue -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/InfraredValue">
+        <rdfs:comment>A specific reading from an infrared sensor indicating heat levels.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Infrared Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/InfrastructureComponent -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/InfrastructureComponent">
+        <rdfs:comment>Elements of physical infrastructure that could be damaged or disrupted by fire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Infrastructure Component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/InitialSpreadIndex -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/InitialSpreadIndex">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Indices"/>
+        <rdfs:comment>A measure predicting the potential rate of fire spread shortly after ignition.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Initial Spread Index</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Instant -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Instant">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Event"/>
+        <rdfs:comment>A specific moment or point in time.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Instant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Interval -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Interval">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Event"/>
+        <rdfs:comment>A span of time between two events or points in time.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Interval</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/LivingObject -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/LivingObject">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/EnvironmentComponent"/>
+        <rdfs:comment>Organisms, including plants and animals, that are affected by fire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Living Object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Location -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Location">
+        <rdfs:comment>A specific geographical area where a fire or related activity occurs.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Location</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/LowRisk -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/LowRisk">
+        <rdfs:comment>A condition where the potential for fire is minimal.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Low Risk</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/MediaItem -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/MediaItem">
+        <rdfs:comment>Digital content such as images, videos, or documents related to fire events or response.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Media Item</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/MedicalCentre -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/MedicalCentre">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/ResponseDepartment"/>
+        <rdfs:comment>A facility that provides healthcare services during or after fire incidents.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Medical Centre</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/MobilityNetwork -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/MobilityNetwork">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/NetworkInfrastructure"/>
+        <rdfs:comment>Systems related to transportation, such as roads or railways, affected by fire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Mobility Network</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/ModerateRisk -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/ModerateRisk">
+        <rdfs:comment>A condition where the likelihood of fire is moderate, requiring caution.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Moderate Risk</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/NaturalCause -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/NaturalCause">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/CausalFactor"/>
+        <rdfs:comment>A fire caused by natural phenomena, such as lightning or volcanic activity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Natural Cause</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/NetworkInfrastructure -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/NetworkInfrastructure">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/InfrastructureComponent"/>
+        <rdfs:comment>Communication or transportation networks that could be disrupted by fire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Network Infrastructure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/NoRisk -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/NoRisk">
+        <rdfs:comment>A condition where there is no immediate risk of fire or related hazards.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>No Risk</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/NonlivingObject -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/NonlivingObject">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/EnvironmentComponent"/>
+        <rdfs:comment>Inanimate objects, such as buildings or infrastructure, that may be impacted by fire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Nonliving Object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/NonproductiveCause -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/NonproductiveCause">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/CausalFactor"/>
+        <rdfs:comment>A fire cause that results from unintended actions or accidents.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Nonproductive Cause</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Observation -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Observation">
+        <rdfs:comment>The act of monitoring or measuring fire-related phenomena.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Observation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Organization -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Organization"/>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Population -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Population">
+        <rdfs:comment>The human community potentially affected by a fire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Population</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Precipitation -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Precipitation">
+        <rdfs:comment>The amount of rain, snow, or other forms of water falling from the sky.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Precipitation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/ProductiveCause -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/ProductiveCause">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/CausalFactor"/>
+        <rdfs:comment>A fire cause linked to natural or essential processes, like controlled burns.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Productive Cause</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/PropagationFlux -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/PropagationFlux">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/FireDynamics"/>
+        <rdfs:comment>The transfer of energy as the fire spreads, including heat and fuel consumption.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Propagation Flux</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/ProvisioningNetwork -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/ProvisioningNetwork">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/NetworkInfrastructure"/>
+        <rdfs:comment>Infrastructure for providing essential services like water, electricity, or internet that may be disrupted by fire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Provisioning Network</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/RateOfSpread -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/RateOfSpread">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/FireDynamics"/>
+        <rdfs:comment>The speed at which a fire moves across a landscape.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Rate of Spread</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/ResidentialInfrastructure -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/ResidentialInfrastructure">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/AreaInfrastructure"/>
+        <rdfs:comment>Housing and living spaces that may be damaged by fire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Residential Infrastructure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Response -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Response">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Wildfire"/>
+        <rdfs:comment>Actions taken to manage, mitigate, or extinguish a fire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Response</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/ResponseAction -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/ResponseAction">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Response"/>
+        <rdfs:comment>Specific tasks or strategies employed in fire management or firefighting efforts.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Response Action</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/ResponseDepartment -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/ResponseDepartment">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Response"/>
+        <rdfs:comment>An organization or team responsible for handling fire emergencies.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Response Department</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/ResponseLogistics -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/ResponseLogistics">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Response"/>
+        <rdfs:comment>The planning and coordination of resources for effective fire response.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Response Logistics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Sensor -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Sensor">
+        <rdfs:comment>A device that detects or measures physical properties, such as temperature, smoke, or humidity, in fire-related monitoring.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Settlement -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Settlement">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/ResponseDepartment"/>
+        <rdfs:comment>A populated area that could be affected by a fire, including towns or villages.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Settlement</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/ShapeFile -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/ShapeFile">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Location"/>
+        <rdfs:comment>A digital vector storage format used for geographic information system (GIS) data, including fire boundaries.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Shape File</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/SmokeSensor -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/SmokeSensor">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Sensor"/>
+        <rdfs:comment>A device that detects the presence and concentration of smoke in the air.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Smoke Sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/SmokeValue -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/SmokeValue">
+        <rdfs:comment>A specific measurement of smoke concentration in the air.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Smoke Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/SoilErosion -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/SoilErosion">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/EnvironmentComponent"/>
+        <rdfs:comment>The removal or degradation of soil caused by fire or fire-related activity.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Soil Erosion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Speed -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Speed">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/WindCondition"/>
+        <rdfs:comment>The velocity of wind, which can significantly affect fire behavior.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Speed</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/StructuralFire -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/StructuralFire">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Fire"/>
+        <rdfs:comment>A fire that occurs in or damages man-made structures like buildings or bridges.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Structural Fire</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/SurfaceFire -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/SurfaceFire">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Fire"/>
+        <rdfs:comment>A fire that burns on the ground, consuming vegetation and surface litter.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Surface Fire</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Tactics -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Tactics">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/ResponseLogistics"/>
+        <rdfs:comment>The methods or techniques used to combat or control a fire.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Tactics</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/TempHumiditySensor -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/TempHumiditySensor">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Sensor"/>
+        <rdfs:comment>A device that measures both temperature and humidity levels.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Temp Humidity Sensor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/TempValue -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/TempValue">
+        <rdfs:comment>A specific temperature reading related to fire or weather conditions.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Temperature Value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/VolcanicFire -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/VolcanicFire">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Fire"/>
+        <rdfs:comment>A fire resulting from volcanic activity, typically involving lava and other volcanic material.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Volcanic Fire</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/WaterResource -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/WaterResource">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/ResponseLogistics"/>
+        <rdfs:comment>A source of water used for firefighting, such as hydrants, lakes, or reservoirs.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Water Resource</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/WeatherCondition -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/WeatherCondition">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Location"/>
+        <rdfs:comment>The state of the atmosphere at a particular place and time, affecting fire behavior.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Weather Condition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/Wildfire -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/Wildfire">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Fire"/>
+        <rdfs:comment>A type of uncontrolled fire occurring in natural areas such as forests, grasslands, or prairies.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Wildfire</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/WindCondition -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/WindCondition">
+        <rdfs:comment>The current state of the wind, including speed and direction, which influences fire spread.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>Wind Condition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/organization -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/organization">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/ShapeFile"/>
+        <rdfs:comment>A group or institution involved in fire management, response, or research.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.theworldavatar.com/kg/ontowildfire/24hPrecipitation -->
+
+
+    <owl:Class rdf:about="http://www.theworldavatar.com/kg/ontowildfire/24hPrecipitation">
+        <rdfs:subClassOf rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/Precipitation"/>
+        <rdfs:comment>The total amount of precipitation that falls within a 24-hour period.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.theworldavatar.com/kg/ontowildfire/"/>
+        <rdfs:label>24h Precipitation</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 5.5.0.2023-01-14T12:41:38Z) https://github.com/owlcs/owlapi/ -->
+
+

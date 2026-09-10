@@ -11,8 +11,8 @@ GroundFire,Class,Fire,IS-A,,,,"A fire that burns below the surface, consuming or
 CrownFire,Class,Fire,IS-A,,,,"A fire that spreads to the tops of trees or shrubs, often more intense and difficult to control.",http://www.theworldavatar.com/kg/ontowildfire/,Crown Fire
 VolcanicFire,Class,Fire,IS-A,,,,"A fire resulting from volcanic activity, typically involving lava and other volcanic material.",http://www.theworldavatar.com/kg/ontowildfire/,Volcanic Fire
 Event,Class,,,,,,"Any occurrence or incident, often associated with a particular time or place.",http://www.theworldavatar.com/kg/ontowildfire/,Event
-Interval,Class,Event,,,,,A span of time between two events or points in time.,http://www.theworldavatar.com/kg/ontowildfire/,Interval
-Instant,Class,Event,,,,,A specific moment or point in time.,http://www.theworldavatar.com/kg/ontowildfire/,Instant
+Interval,Class,Event,IS-A,,,,A span of time between two events or points in time.,http://www.theworldavatar.com/kg/ontowildfire/,Interval
+Instant,Class,Event,IS-A,,,,A specific moment or point in time.,http://www.theworldavatar.com/kg/ontowildfire/,Instant
 Characteristics,Class,,,,,,"Qualities or features that define or describe something, often used in the context of phenomena like fire.",http://www.theworldavatar.com/kg/ontowildfire/,Characteristics
 Anomaly,Class,Characteristics,IS-A,,,,"An unusual or irregular occurrence, often signifying a deviation from the norm.",http://www.theworldavatar.com/kg/ontowildfire/,Anomaly
 FWIAnomaly,Class,Anomaly,IS-A,,,,"A deviation from typical readings in the Fire Weather Index, indicating abnormal fire weather conditions.",http://www.theworldavatar.com/kg/ontowildfire/,FWI Anomaly

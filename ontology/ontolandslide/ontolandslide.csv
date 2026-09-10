@@ -40,7 +40,7 @@ Settlement,Class,ResponseDepartment,IS-A,,,,A populated area that may be affecte
 Government,Class,ResponseDepartment,IS-A,,,,Represents governmental bodies involved in managing landslide risks and responses.,http://www.theworldavatar.com/kg/ontolandslide,Government,,
 Community,Class,ResponseDepartment,IS-A,,,,A group of people residing in an area potentially affected by landslides.,http://www.theworldavatar.com/kg/ontolandslide,Community,,
 MedicalCentre,Class,ResponseDepartment,IS-A,,,,Healthcare facilities that provide aid to individuals affected by landslides.,http://www.theworldavatar.com/kg/ontolandslide,Medical Centre,,
-CausalFactor,Class,,IS-A,,,,"A factor that contributes to the occurrence of a landslide, either human or natural.",http://www.theworldavatar.com/kg/ontolandslide,Causal Factor,,
+CausalFactor,Class,,,,,,"A factor that contributes to the occurrence of a landslide, either human or natural.",http://www.theworldavatar.com/kg/ontolandslide,Causal Factor,,
 HumanFactor,Class,CausalFactor,IS-A,,,,Human activities or actions that can trigger or influence landslides.,http://www.theworldavatar.com/kg/ontolandslide,Human Factor,,
 NaturalFactor,Class,CausalFactor,IS-A,,,,Natural occurrences like earthquakes or rainfall that contribute to landslide events.,http://www.theworldavatar.com/kg/ontolandslide,Natural Factor,,
 SlopeExcavation,Class,HumanFactor,IS-A,,,,Human-induced slope modification that can increase landslide risk.,http://www.theworldavatar.com/kg/ontolandslide,Slope Excavation,,
