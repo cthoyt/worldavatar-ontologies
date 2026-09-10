@@ -27,7 +27,7 @@ Hypocenter,Class,,,,,,The point beneath the earth's surface where an earthquake 
 Epicenter,Class,,,,,,The point on the earth's surface directly above the hypocenter of an earthquake.,http://www.theworldavatar.com/kg/ontoearthquake,Epicenter
 Fire,Class,Event,IS-A,,,,"An uncontrolled combustion event that may be triggered by seismic activity, affecting nearby infrastructure.",http://www.theworldavatar.com/kg/ontoearthquake,Fire
 Flood,Class,Event,IS-A,,,,"An overflow of water onto normally dry land, which may occur following a tsunami or other seismic events.",http://www.theworldavatar.com/kg/ontoearthquake,Flood
-Tsunami,,Event,IS-A,,,,"A series of ocean waves caused by large underwater seismic activity, such as an earthquake.",http://www.theworldavatar.com/kg/ontoearthquake,Tsunami
+Tsunami,Class,Event,IS-A,,,,"A series of ocean waves caused by large underwater seismic activity, such as an earthquake.",http://www.theworldavatar.com/kg/ontoearthquake,Tsunami
 Landslide,Class,Event,IS-A,,,,"A mass movement of earth, rock, or debris down a slope, typically caused by gravitational pull.",http://www.theworldavatar.com/kg/ontoearthquake,Landslide
 EarthquakeRiskManagement,Class,,,,,,"The process of planning, mitigating, responding to, and recovering from the impacts of earthquakes.",http://www.theworldavatar.com/kg/ontoearthquake,Earthquake Risk Management
 Response,Class,,,,,,Actions taken immediately after an earthquake to manage its consequences.,http://www.theworldavatar.com/kg/ontoearthquake,Response
@@ -42,7 +42,7 @@ Settlement,Class,ResponseDepartment,IS-A,,,,A populated area affected or potenti
 Government,Class,ResponseDepartment,IS-A,,,,"Official entities involved in earthquake preparedness, response, and recovery efforts.",http://www.theworldavatar.com/kg/ontoearthquake,Government
 Community,Class,ResponseDepartment,IS-A,,,,A group of people living in an area impacted or potentially impacted by an earthquake.,http://www.theworldavatar.com/kg/ontoearthquake,Community
 MedicalCentre,Class,ResponseDepartment,IS-A,,,,Facilities providing medical services to treat casualties after an earthquake.,http://www.theworldavatar.com/kg/ontoearthquake,Medical Centre
-Preparedness,Class,,IS-A,,,,Planning and readiness activities aimed at minimizing the impacts of future earthquakes.,http://www.theworldavatar.com/kg/ontoearthquake,Causal Factor
+Preparedness,Class,,,,,,Planning and readiness activities aimed at minimizing the impacts of future earthquakes.,http://www.theworldavatar.com/kg/ontoearthquake,Causal Factor
 HazardAssessment,Class,,,,,,The process of evaluating potential earthquake hazards and their possible impacts.,http://www.theworldavatar.com/kg/ontoearthquake,Human Factor
 MitigationStrategy,Class,,,,,,Plans and actions designed to reduce the long-term risks associated with earthquakes.,http://www.theworldavatar.com/kg/ontoearthquake,Natural Factor
 WarningSystem,Class,,,,,,A system designed to alert populations of an imminent earthquake threat.,http://www.theworldavatar.com/kg/ontoearthquake,Slope Excavation
