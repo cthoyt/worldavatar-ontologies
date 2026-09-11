@@ -9,8 +9,9 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:OntoDSV="http://www.theworldavatar.com/kb/ontodsv/OntoDSV.owl#">
     <owl:Ontology rdf:about="http://www.theworldavatar.com/kb/ontodsv/OntoDSV.owl">
-        <dc:date>10 September 2026</dc:date>
+        <dc:date>11 September 2026</dc:date>
         <gitCommitHash>c0599beca8df55873a1ab061dee64e52c510c6a0</gitCommitHash>
+        <owl:versionInfo>1.0</owl:versionInfo>
     </owl:Ontology>
     
 
